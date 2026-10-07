@@ -54,3 +54,135 @@ html, body { margin: 0; background: #17365d; }
   #particula-hero .panel-description { font-size: 15px; }
   #particula-hero .problem-close { margin-top: 48px; }
 }
+/* Section wheel: a scroll-snapping navigator, separate from page scrolling. */
+#particula-hero button, #particula-hero a { font-family: inherit; }
+#particula-hero .section-wheel { position: absolute; bottom: 30px; right: 5%; width: 250px; z-index: 3; opacity: max(0, calc(1 - var(--p) * 4)); }
+#particula-hero .wheel-label { margin: 0 0 8px; text-align: center; font-size: 11px; letter-spacing: -.015em; }
+#particula-hero .wheel-label span { display: block; opacity: .7; margin-top: 4px; }
+#particula-hero .wheel-shell { position: relative; }
+#particula-hero .wheel-selection { position: absolute; left: 8px; right: 8px; top: 44px; height: 44px; border-radius: 12px; background: #ffffff60; border: 1px solid #17365d14; pointer-events: none; }
+#particula-hero .wheel-list { height: 132px; padding: 44px 0; overflow-y: auto; scroll-snap-type: y mandatory; overscroll-behavior: contain; scrollbar-width: none; mask-image: linear-gradient(transparent,black 32%,black 68%,transparent); perspective: 500px; }
+#particula-hero .wheel-list::-webkit-scrollbar { display: none; }
+#particula-hero .wheel-list a { height: 44px; display: flex; align-items: center; justify-content: center; scroll-snap-align: center; color: var(--navy); font-size: 20px; font-weight: 600; text-decoration: none; transform: rotateX(var(--angle,0deg)) scale(var(--scale,1)); opacity: var(--fade,1); }
+#particula-hero .wheel-go { display: block; margin: 8px auto 0; min-height: 32px; padding: 4px 12px; background: none; color: var(--navy); border: 0; font-size: 12px; font-weight: 600; cursor: pointer; }
+#particula-hero .wheel-go span { display: inline-block; margin-left: 14px; transition: transform .2s; }
+#particula-hero .section-wheel:focus-within .wheel-list { mask-image: none; }
+#particula-hero .content-section { position: relative; color: #fff; padding: 110px 7%; }
+#particula-hero .section-head { text-align: center; margin: 0 auto 56px; }
+#particula-hero .content-section h2 { font-size: clamp(40px,5.4vw,78px); line-height: 1.05; font-weight: 600; max-width: 1100px; margin: 0 auto; }
+#particula-hero .content-section h2 span { color: #adc9ec; }
+#particula-hero .section-intro { font-size: 19px; line-height: 1.6; color: #d6e3f3; letter-spacing: -.025em; margin: 26px 0 0; }
+#particula-hero .content-section .eyebrow { font-size: 11px; letter-spacing: .13em; margin: 0 0 28px; }
+#particula-hero .solution { background: linear-gradient(#17365ddd,#17365d88); }
+#particula-hero .platform-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; max-width: 1200px; margin: auto; }
+#particula-hero .platform-card { min-width: 0; padding: 24px 30px 32px; border-radius: 26px; background: #f1f6fc; color: var(--navy); }
+#particula-hero .glow-card { position: relative; overflow: hidden; transition: transform .28s, box-shadow .28s; }
+#particula-hero .glow-card::after { content: ''; position: absolute; inset: 0; background: radial-gradient(280px circle at var(--mx,50%) var(--my,50%),#97c8ff30,transparent 70%); opacity: 0; pointer-events: none; transition: opacity .3s; }
+#particula-hero .component-number { color: var(--blue); font-size: 11px; letter-spacing: .1em; font-weight: 600; margin: 12px 0 16px; }
+#particula-hero .platform-card h3 { font-size: 26px; margin: 0 0 18px; line-height: 1.1; font-weight: 600; }
+#particula-hero .platform-card > p:not(.component-number) { font-size: 16px; line-height: 1.65; letter-spacing: -.025em; color: #405873; margin: 0 0 28px; }
+#particula-hero .component-tag { font-size: 11px; letter-spacing: -.01em; padding: 7px 10px; border-radius: 99px; border: 1px solid currentColor; display: inline-block; }
+#particula-hero .component-art { height: 210px; display: grid; place-items: center; position: relative; overflow: hidden; border-radius: 18px; background: radial-gradient(ellipse,#dbe6f5,transparent 68%); }
+#particula-hero .nanotube { width: 74px; height: 170px; border-radius: 40%; transform: rotate(35deg); background: repeating-linear-gradient(25deg,transparent 0 12px,#96cbe6 13px 17px,transparent 18px 30px),repeating-linear-gradient(145deg,#17365d 0 4px,#3e68a0 5px 7px,#17365d 8px 13px); box-shadow: inset 10px 0 20px #ffffff40,15px 10px 28px #17365d30; transition: transform .6s; }
+#particula-hero .sensor-art i { position: absolute; width: 15px; height: 15px; border-radius: 50%; background: #77a9ce; box-shadow: inset -4px -3px 7px #17365d50; }
+#particula-hero .sensor-art i:nth-of-type(1) { top: 40px; left: 25%; } #particula-hero .sensor-art i:nth-of-type(2) { bottom: 50px; right: 18%; width: 22px; height: 22px; } #particula-hero .sensor-art i:nth-of-type(3) { bottom: 24px; left: 28%; width: 11px; height: 11px; }
+#particula-hero .reader-body { width: 190px; height: 130px; background: linear-gradient(135deg,#fff,#c3d2e6); border-radius: 18px 18px 10px 10px; box-shadow: 8px 16px 0 #9eb4d0,16px 27px 22px #17365d20; transform: perspective(600px) rotateX(12deg) rotateY(-18deg); transition: transform .5s; padding: 18px; }
+#particula-hero .reader-light { height: 5px; width: 26px; background: #3e68a0; border-radius: 9px; margin-bottom: 20px; box-shadow: 0 0 12px #3e68a088; }
+#particula-hero .well-grid { height: 58px; border-radius: 6px; background: radial-gradient(circle,#7d9dbf 3px,transparent 4px) 0 0/18px 16px,#17365d; border: 8px solid #17365d; }
+#particula-hero .spectral-bars { display: flex; align-items: center; gap: 7px; height: 140px; transform: perspective(600px) rotateY(-12deg); }
+#particula-hero .spectral-bars i { display: block; width: 8px; height: 30%; background: linear-gradient(#96bde6,#17365d); border-radius: 8px; transition: height .5s; }
+#particula-hero .spectral-bars i:nth-child(3n) { height: 74%; } #particula-hero .spectral-bars i:nth-child(4n) { height: 95%; } #particula-hero .spectral-bars i:nth-child(5n) { height: 55%; }
+#particula-hero .section-footnote { text-align: center; font-size: 14px; line-height: 1.6; color: #d0dff1; margin: 32px 0 0; }
+#particula-hero .workflow { background: #17365d99; }
+#particula-hero .workflow-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; }
+#particula-hero .workflow-heading h2 { text-align: left; font-size: clamp(40px,4.5vw,65px); }
+#particula-hero .text-link { display: inline-flex; align-items: center; gap: 22px; color: inherit; font-size: 14px; font-weight: 600; text-decoration: none; padding: 14px 0; }
+#particula-hero .workflow-heading .text-link { margin-top: 24px; }
+#particula-hero .text-link span { transition: transform .2s; }
+#particula-hero .workflow-steps { list-style: none; margin: 0; padding: 0; }
+#particula-hero .workflow-steps li { position: relative; display: flex; gap: 24px; padding: 0 0 42px; }
+#particula-hero .workflow-steps li:not(:last-child)::before { content: ''; position: absolute; top: 48px; bottom: 8px; left: 23px; width: 1px; background: #adc9ec40; }
+#particula-hero .step-number { flex: 0 0 48px; height: 48px; display: grid; place-items: center; border: 1px solid #adc9ec55; border-radius: 50%; color: #bdd7f7; font-size: 14px; transition: background .3s; }
+#particula-hero .workflow-steps h3 { font-size: 25px; line-height: 1.2; font-weight: 500; margin: 9px 0 12px; }
+#particula-hero .workflow-steps p { margin: 0; color: #d0dff1; font-size: 16px; line-height: 1.65; letter-spacing: -.025em; }
+#particula-hero .use-cases { background: #17365dbb; display: grid; grid-template-columns: .9fr 1.1fr; gap: 7%; }
+#particula-hero .uses-heading h2 { text-align: left; font-size: clamp(40px,4vw,60px); }
+#particula-hero .use-list details { border-bottom: 1px solid #c4dbf433; }
+#particula-hero .use-list summary { display: flex; align-items: center; gap: 20px; cursor: pointer; list-style: none; padding: 24px 0; font-size: 24px; line-height: 1.15; transition: color .2s; }
+#particula-hero summary::-webkit-details-marker { display: none; }
+#particula-hero .use-index { font-size: 11px; color: #a8c6eb; letter-spacing: .05em; }
+#particula-hero .expand { margin-left: auto; font-size: 28px; font-weight: 400; transition: transform .25s; }
+#particula-hero details[open] .expand { transform: rotate(45deg); }
+#particula-hero .use-list details p { margin: 0 32px 26px; font-size: 16px; line-height: 1.65; color: #d0dff1; letter-spacing: -.025em; }
+#particula-hero .pilot { background: linear-gradient(#17365daa,#17365d66); }
+#particula-hero .pilot-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); max-width: 1060px; gap: 24px; margin: auto; }
+#particula-hero .pilot-card { display: flex; flex-direction: column; padding: 38px; background: #17365d90; border: 1px solid #adc9ec40; border-radius: 26px; backdrop-filter: blur(16px); }
+#particula-hero .pilot-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #adc9ec; }
+#particula-hero .pilot-symbol { font-size: 64px; line-height: 1; }
+#particula-hero .pilot-card h3 { font-size: 36px; margin: 28px 0 12px; font-weight: 600; }
+#particula-hero .pilot-card p, #particula-hero .pilot-card li { color: #d0dff1; line-height: 1.6; font-size: 16px; letter-spacing: -.025em; }
+#particula-hero .pilot-card .pilot-description { min-height: 76px; margin: 0 0 20px; }
+#particula-hero .pilot-card h4 { font-size: 12px; letter-spacing: .07em; text-transform: uppercase; margin: 20px 0 10px; font-weight: 600; }
+#particula-hero .pilot-card ul { padding-left: 20px; margin: 0; min-height: 78px; }
+#particula-hero .pilot-card p { margin: 0 0 28px; }
+#particula-hero .action-button { display: inline-flex; position: relative; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 24px; border-radius: 99px; color: var(--navy); background: #fff; text-decoration: none; font-size: 15px; font-weight: 600; line-height: 1.4; transition: transform .25s, background .25s,box-shadow .25s; }
+#particula-hero .action-button span { transition: transform .25s; font-size: 22px; }
+#particula-hero .pilot-card .action-button { margin-top: auto; }
+#particula-hero .action-button.secondary { background: #c5d9f2; }
+#particula-hero .contact { overflow: hidden; text-align: center; padding: 160px 7%; isolation: isolate; }
+#particula-hero .contact h2 { font-size: clamp(46px,6.5vw,94px); }
+#particula-hero .contact-orbit { position: absolute; z-index: -1; width: 850px; height: 850px; border: 1px solid #b3d3ff40; border-radius: 50%; left: calc(50% - 425px); top: 20px; box-shadow: 0 0 0 80px #c3ddff07,0 0 0 160px #c3ddff04; background: radial-gradient(circle,#3e68a044,transparent 70%); }
+#particula-hero .contact-button { margin-top: 34px; background: var(--yellow); min-width: 260px; }
+#particula-hero .contact-note { font-size: 12px; color: #d0dff1; margin: 18px 0 0; letter-spacing: -.01em; }
+#particula-hero .site-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding: 36px 7%; background: #17365ddd; color: #d0dff1; }
+#particula-hero .footer-brand { font-size: 34px; color: #fff; font-weight: 700; text-decoration: none; }
+#particula-hero .site-footer p { font-size: 13px; letter-spacing: -.02em; }
+#particula-hero :focus-visible { outline: 2px solid #3e68a0; outline-offset: 5px; }
+#particula-hero .content-section :focus-visible, #particula-hero .site-footer :focus-visible { outline-color: #ffde59; }
+@media (hover:hover) and (prefers-reduced-motion:no-preference) {
+ #particula-hero .glow-card:hover { transform: translateY(-6px); box-shadow: 0 25px 45px #071b3533; }
+ #particula-hero .glow-card:hover::after { opacity: 1; }
+ #particula-hero .platform-card:hover .nanotube { transform: rotate(50deg) scale(1.06); }
+ #particula-hero .platform-card:hover .reader-body { transform: perspective(600px) rotateX(4deg) rotateY(5deg); }
+ #particula-hero .platform-card:hover .spectral-bars i:nth-child(odd) { height: 90%; }
+ #particula-hero .platform-card:hover .spectral-bars i:nth-child(even) { height: 45%; }
+ #particula-hero .action-button:hover { transform: translateY(-3px); box-shadow: 0 10px 30px #071b3530; background: #d9e8fb; }
+ #particula-hero .action-button:hover span, #particula-hero .text-link:hover span, #particula-hero .wheel-go:hover span { transform: translate(3px,-3px); }
+ #particula-hero .workflow-steps li:hover .step-number { background: #3e68a099; }
+ #particula-hero .use-list summary:hover { color: #adc9ec; }
+}
+@media (max-width:900px) {
+ #particula-hero .platform-grid { gap: 14px; }
+ #particula-hero .platform-card { padding: 18px; }
+ #particula-hero .reader-body { width: 150px; }
+ #particula-hero .workflow-layout, #particula-hero .use-cases { grid-template-columns: 1fr; gap: 48px; }
+}
+@media (max-width:700px) {
+ #particula-hero .content-section { padding: 72px 24px; }
+ #particula-hero .platform-grid, #particula-hero .pilot-grid { grid-template-columns: 1fr; }
+ #particula-hero .platform-card { padding: 24px; }
+ #particula-hero .platform-card > p:not(.component-number) { margin-bottom: 22px; }
+ #particula-hero .component-art { height: 185px; }
+ #particula-hero .section-head { margin-bottom: 36px; }
+ #particula-hero .section-intro { font-size: 17px; }
+ #particula-hero .desktop-break { display: none; }
+ #particula-hero .pilot-card { padding: 28px; }
+ #particula-hero .pilot-card .pilot-description { min-height: 0; }
+ #particula-hero .pilot-card ul { min-height: 0; }
+ #particula-hero .use-list summary { font-size: 21px; gap: 14px; }
+ #particula-hero .workflow-steps li { gap: 16px; }
+ #particula-hero .workflow-steps h3 { font-size: 22px; }
+ #particula-hero .contact { padding-top: 110px; padding-bottom: 110px; }
+ #particula-hero .section-wheel { width: 220px; right: calc(50% - 110px); bottom: 38px; }
+ #particula-hero .wheel-label { font-size: 10px; }
+ #particula-hero .wheel-list a { font-size: 18px; }
+ #particula-hero .scroll-cue { bottom: 14px; font-size: 11px; gap: 8px; }
+ #particula-hero .scroll-cue span { font-size: 16px; }
+ #particula-hero .title-wrap { padding-bottom: 130px; }
+ #particula-hero .site-footer { padding: 28px 24px; flex-direction: column; align-items: flex-start; gap: 10px; }
+ #particula-hero .site-footer p { margin: 0; }
+}
+@media (prefers-reduced-motion:reduce) {
+ #particula-hero *, #particula-hero *::after { transition: none !important; scroll-behavior: auto !important; }
+ #particula-hero .wheel-list a { transform: none; }
+}

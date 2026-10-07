@@ -11,12 +11,19 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <main id="particula-hero" aria-label="Particula introduction" tabindex="0">
+  <main id="particula-hero" aria-label="Particula" tabindex="0">
         <div class="backdrop" aria-hidden="true"><img src="assets/helix.jpg" alt="" fetchpriority="high"><div class="tint"></div></div>
-    <div class="journey">
+    <div class="journey" id="overview">
       <div class="scene">
         <div class="topline" aria-hidden="true"><span>Particula</span><span>A new perspective on discovery</span></div>
         <div class="title-wrap"><h1>Particula</h1></div>
+        <nav class="section-wheel" aria-label="Explore the page">
+          <p class="wheel-label">A different perspective. <span>Scroll to explore.</span></p>
+          <div class="wheel-shell"><div class="wheel-selection" aria-hidden="true"></div><div class="wheel-list">
+            <a href="#overview">Overview</a><a href="#problem">The problem</a><a href="#solution">The solution</a><a href="#how-it-works">How it works</a><a href="#use-cases">Use cases</a><a href="#pilot">Pilot program</a><a href="#contact">Let’s talk</a>
+          </div></div>
+          <button class="wheel-go" type="button">Explore overview <span aria-hidden="true">↗</span></button>
+        </nav>
         <div class="statement"><h2>Particula gave birth to <span>NanoGlyph</span>: the nanosensor that makes drugs discovery faster and cheaper</h2></div>
         <a class="scroll-cue" href="#nanoglyph">Scroll to discover <span aria-hidden="true">↓</span></a>
       </div>
@@ -43,6 +50,45 @@
       <p class="evidence-note">Illustrative estimates from Particula’s MVP model for an ELISA + imaging + omics workflow. Actual costs and timelines vary by study.</p>
       <p class="problem-close">Better science deserves<br><strong>a faster way forward.</strong></p>
     </section>
+    <section class="content-section solution" id="solution" aria-labelledby="solution-title">
+      <div class="section-head"><p class="eyebrow">THE SOLUTION / NANOGLYPH</p><h2 id="solution-title">Small sensor.<br><span>Bigger perspective.</span></h2><p class="section-intro">One connected platform. From molecular interactions<br class="desktop-break"> to a biological fingerprint you can explore.</p></div>
+      <div class="platform-grid">
+        <article class="platform-card glow-card"><div class="component-art sensor-art" aria-hidden="true"><div class="nanotube"></div><i></i><i></i><i></i></div><p class="component-number">01 / SENSE</p><h3>SWCNT nanosensor</h3><p>DNA-wrapped carbon nanotubes respond to their molecular surroundings, creating a fingerprint beyond a single predefined biomarker.</p><span class="component-tag">Molecular interactions</span></article>
+        <article class="platform-card glow-card"><div class="component-art reader-art" aria-hidden="true"><div class="reader-body"><div class="reader-light"></div><div class="well-grid"></div></div></div><p class="component-number">02 / READ</p><h3>NIR plate reader</h3><p>Excite the nanosensors and collect their near-infrared emission. Turn sample–sensor interactions into measurable spectral data.</p><span class="component-tag">Optical fingerprints</span></article>
+        <article class="platform-card glow-card"><div class="component-art software-art" aria-hidden="true"><div class="spectral-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><p class="component-number">03 / INTERPRET</p><h3>AI software</h3><p>Explore patterns across spectra and time. Compare biological states and treatment responses within the context of your study.</p><span class="component-tag">Biological insight</span></article>
+      </div>
+      <p class="section-footnote">Three components. One research workflow.</p>
+    </section>
+    <section class="content-section workflow" id="how-it-works" aria-labelledby="workflow-title">
+      <div class="workflow-layout"><div class="workflow-heading"><p class="eyebrow">HOW IT WORKS</p><h2 id="workflow-title">Biology speaks.<br><span>We read the signal.</span></h2><p class="section-intro">From your sample to a dynamic molecular fingerprint.</p><a class="text-link" href="#pilot">Explore a pilot with your samples <span aria-hidden="true">↗</span></a></div>
+      <ol class="workflow-steps">
+        <li><span class="step-number">01</span><div><h3>Introduce your sample</h3><p>Bring a relevant biological sample into contact with the DNA-wrapped nanosensors.</p></div></li>
+        <li><span class="step-number">02</span><div><h3>Let interactions leave a signature</h3><p>Molecules interact with the sensor surface, changing the nanotubes’ optical response.</p></div></li>
+        <li><span class="step-number">03</span><div><h3>Illuminate. Read. Repeat.</h3><p>Collect near-infrared spectra. Where sample integrity is preserved, repeated readings can reveal how the fingerprint evolves.</p></div></li>
+        <li><span class="step-number">04</span><div><h3>Connect the patterns</h3><p>AI-assisted analysis explores spectral and temporal patterns to help compare samples, conditions and responses.</p></div></li>
+      </ol></div>
+    </section>
+    <section class="content-section use-cases" id="use-cases" aria-labelledby="uses-title">
+      <div class="uses-heading"><p class="eyebrow">USE CASES</p><h2 id="uses-title">When one marker<br><span>isn’t the whole story.</span></h2><p class="section-intro">Potential applications for complex biology.<br>Built to be explored with your research.</p></div>
+      <div class="use-list">
+        <details open><summary><span class="use-index">01</span><span>Drug-response screening</span><span class="expand" aria-hidden="true">+</span></summary><p>Explore whether a treatment shifts a sample’s molecular fingerprint, and compare responses across candidate compounds or conditions.</p></details>
+        <details><summary><span class="use-index">02</span><span>Complex disease biology</span><span class="expand" aria-hidden="true">+</span></summary><p>Study biology distributed across multiple molecular changes, especially when no single validated biomarker captures the full picture.</p></details>
+        <details><summary><span class="use-index">03</span><span>Patient stratification research</span><span class="expand" aria-hidden="true">+</span></summary><p>Investigate whether spectral fingerprints distinguish biologically different sample groups that appear similar by other measures.</p></details>
+        <details><summary><span class="use-index">04</span><span>Longitudinal monitoring</span><span class="expand" aria-hidden="true">+</span></summary><p>Follow changes over time with repeated optical measurements in assays designed to preserve sample integrity.</p></details>
+        <details><summary><span class="use-index">05</span><span>Early phenotypic screening</span><span class="expand" aria-hidden="true">+</span></summary><p>Explore a broader molecular readout to help prioritize samples or conditions for deeper downstream characterization.</p></details>
+      </div>
+    </section>
+    <section class="content-section pilot" id="pilot" aria-labelledby="pilot-title">
+      <div class="section-head"><p class="eyebrow">THE PILOT PROGRAM</p><h2 id="pilot-title">Your biology.<br><span>Our next discovery.</span></h2><p class="section-intro">Help us explore where NanoGlyph adds value to your<br class="desktop-break"> screening, biomarker discovery or validation workflow.</p></div>
+      <div class="pilot-grid">
+        <article class="pilot-card glow-card"><div class="pilot-top"><span class="pilot-symbol" aria-hidden="true">α</span><span class="component-tag">Full-platform pilot</span></div><h3>Partner Alpha</h3><p class="pilot-description">Explore the complete NanoGlyph workflow with your biological models.</p><h4>We provide</h4><ul><li>SWCNT nanosensors</li><li>NIR plate reader</li><li>Integrated software / AI analysis</li></ul><h4>You bring</h4><p>Relevant samples, assays or biological models.</p><a class="action-button" href="https://form.jotform.com/262755173851059" target="_blank" rel="noopener noreferrer">Apply as Partner Alpha <span aria-hidden="true">↗</span></a></article>
+        <article class="pilot-card glow-card"><div class="pilot-top"><span class="pilot-symbol" aria-hidden="true">β</span><span class="component-tag">Sensor-first pilot</span></div><h3>Partner Beta</h3><p class="pilot-description">Bring NanoGlyph into a lab that already has NIR measurement capabilities.</p><h4>We provide</h4><ul><li>SWCNT nanosensors</li></ul><h4>You bring</h4><p>Relevant samples, assays or biological models, your own NIR plate reader and autonomous analysis.</p><a class="action-button secondary" href="https://form.jotform.com/262755173851059" target="_blank" rel="noopener noreferrer">Apply as Partner Beta <span aria-hidden="true">↗</span></a></article>
+      </div><p class="section-footnote">Tell us about your setup. Together, we’ll define fit, scope and timing.</p>
+    </section>
+    <section class="content-section contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-orbit" aria-hidden="true"></div><p class="eyebrow">LET’S TALK</p><h2 id="contact-title">What could your<br><span>samples tell you?</span></h2><p class="section-intro">Bring us your research question.<br>Let’s explore it with NanoGlyph.</p><a class="action-button contact-button" href="https://form.jotform.com/262755173851059" target="_blank" rel="noopener noreferrer">Start the conversation <span aria-hidden="true">↗</span></a><p class="contact-note">Tell us about your lab through our pilot interest form.</p>
+    </section>
+    <footer class="site-footer"><a href="#overview" class="footer-brand">Particula</a><p>New perspectives. At the nanoscale.</p><a href="#overview" class="text-link">Back to the beginning <span aria-hidden="true">↑</span></a></footer>
   </main>
 </body>
 </html>
