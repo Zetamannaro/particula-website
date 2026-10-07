@@ -1,0 +1,22 @@
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #17365d; }
+#particula-hero { --navy: #17365d; --blue: #3e68a0; --yellow: #ffde59; --p: 0; font-family: 'Raleway', sans-serif; letter-spacing: -.047em; color: var(--navy); height: 100svh; overflow-y: auto; overflow-x: hidden; }
+#particula-hero .journey { position: relative; height: 260%; }
+#particula-hero .scene { position: sticky; top: 0; height: 100svh; overflow: hidden; background: #e7e7ef; isolation: isolate; }
+#particula-hero .backdrop { position: absolute; inset: 0; z-index: -2; }
+#particula-hero .backdrop img { position: absolute; width: 100%; height: 180%; top: -65%; object-fit: cover; object-position: center; transform: translate3d(0, calc(var(--p) * 32%), 0); will-change: transform; }
+#particula-hero .tint { position: absolute; inset: 0; background: var(--navy); opacity: calc(var(--p) * .82); }
+#particula-hero .topline { position: absolute; top: 32px; left: 4.5%; right: 4.5%; display: flex; justify-content: space-between; gap: 24px; font-size: 14px; font-weight: 600; opacity: calc(1 - var(--p) * 2); }
+#particula-hero .title-wrap { position: absolute; inset: 0; display: grid; place-items: center; transform: translate3d(0, calc(var(--p) * -105svh), 0); }
+#particula-hero h1 { font: 600 clamp(80px, 19vw, 280px)/1 'Raleway', sans-serif; letter-spacing: -.047em; margin: 0; padding-right: .047em; text-shadow: 0 2px 45px #ffffff80; }
+#particula-hero .statement { position: absolute; inset: 0; display: grid; place-items: center; padding: 7%; transform: translate3d(0, calc((1 - var(--p)) * 110svh), 0); }
+#particula-hero h2 { max-width: 1050px; margin: 0; font: 500 clamp(32px, 4.8vw, 72px)/1.14 'Raleway', sans-serif; letter-spacing: -.047em; text-align: center; color: #fff; text-wrap: balance; }
+#particula-hero h2 span { color: var(--yellow); font-weight: 600; }
+#particula-hero .scroll-cue { position: absolute; bottom: 42px; left: 50%; transform: translateX(-50%); color: var(--navy); text-decoration: none; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 18px; opacity: calc(1 - var(--p) * 3); }
+#particula-hero .scroll-cue span { font-size: 24px; }
+#particula-hero .progress { position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: #ffffff20; }
+#particula-hero .progress i { display: block; height: 100%; width: 100%; background: var(--yellow); transform: scaleX(var(--p)); transform-origin: left; }
+#particula-hero #nanoglyph { position: absolute; bottom: 0; height: 1px; }
+@media (max-width: 600px) { #particula-hero .topline { top: 24px; font-size: 12px; } #particula-hero .topline span:last-child { max-width: 140px; text-align: right; } #particula-hero .backdrop img { width: 150%; left: -25%; } #particula-hero h1 { font-size: 22vw; } #particula-hero .statement { padding: 8%; } }
+@media (prefers-reduced-motion: reduce) { #particula-hero .backdrop img { transform: none; } #particula-hero .title-wrap { transform: none; opacity: calc(1 - var(--p) * 2); } #particula-hero .statement { transform: none; opacity: clamp(0, calc(var(--p) * 2 - 1), 1); } }
