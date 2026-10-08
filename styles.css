@@ -40,8 +40,8 @@ html, body { margin: 0; background: #17365d; }
 #particula-hero .tradeoff h3 { font-size: 23px; font-weight: 600; line-height: 1.2; letter-spacing: -.047em; margin: 0 0 12px; }
 #particula-hero .panel-description { max-width: 360px; margin: 0; color: #d5e0ef; font-size: 16px; line-height: 1.6; letter-spacing: -.025em; }
 #particula-hero .evidence-note { max-width: 720px; margin: 24px auto 0; color: #bfcee1; font-size: 12px; line-height: 1.6; letter-spacing: -.01em; }
-#particula-hero .problem-close { margin: 76px 0 0; font-size: clamp(28px, 3.6vw, 48px); line-height: 1.15; color: #bbd0ec; font-weight: 400; }
-#particula-hero .problem-close strong { font-weight: 600; color: #fff; }
+
+
 @media (max-width: 700px) {
   #particula-hero .problem { padding: 64px 24px 72px; }
   #particula-hero .eyebrow { margin-bottom: 24px; font-size: 11px; }
@@ -52,7 +52,7 @@ html, body { margin: 0; background: #17365d; }
   #particula-hero .big-number { font-size: 80px; margin: 28px 0; }
   #particula-hero .tradeoff h3 { font-size: 21px; }
   #particula-hero .panel-description { font-size: 15px; }
-  #particula-hero .problem-close { margin-top: 48px; }
+
 }
 /* Persistent desktop navigation; the reading column reserves its own space. */
 #particula-hero button, #particula-hero a { font-family: inherit; }
@@ -251,10 +251,10 @@ html, body { margin: 0; background: #17365d; }
 #particula-hero .pilot-invitation-title { margin: 0 0 28px; font-size: clamp(25px, 2.8vw, 38px); line-height: 1.2; font-weight: 500; text-wrap: balance; }
 #particula-hero .pilot-cta { min-width: 300px; background: var(--yellow); font-size: 20px; padding: 21px 32px; box-shadow: 0 10px 48px #ffde591a; }
 #particula-hero .pilot-cta-note { margin: 22px 0 0; font-size: 13px; line-height: 1.7; color: #d0dff1; letter-spacing: -.01em; }
-#particula-hero .contact-button { background: #ffffff10; color: #fff; border: 1px solid #adc9ec80; }
+#particula-hero .contact-button { background: var(--yellow); color: var(--navy); border: 1px solid transparent; }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
  #particula-hero .pilot-cta:hover { background: #ffe986; box-shadow: 0 14px 50px #ffde5933; }
- #particula-hero .contact-button:hover { background: #ffffff20; }
+ #particula-hero .contact-button:hover { background: #ffe986; }
 }
 @media (max-width: 700px) {
  #particula-hero .statement h2 { font-size: clamp(50px, 14vw, 92px); }
@@ -271,3 +271,5 @@ html, body { margin: 0; background: #17365d; }
  #particula-hero .product-promise { font-size: 26px; margin-top: 16px; }
  #particula-hero .statement-description { margin-top: 16px; font-size: 15px; }
 }
+
+#particula-hero .pilot-card .pilot-availability { align-self: flex-start; margin: 0 0 24px; padding: 8px 12px; border-radius: 99px; color: var(--yellow); background: #ffde5910; border: 1px solid #ffde5933; font-size: 13px; font-weight: 600; line-height: 1.4; letter-spacing: -.015em; }
