@@ -1,0 +1,4 @@
+OGL 1.0.11 by Nathan Gordon
+https://github.com/oframe/ogl
+License declared by the upstream package: Unlicense
+https://unlicense.org/

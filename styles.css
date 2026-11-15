@@ -8,9 +8,9 @@ html, body { margin: 0; background: #17365d; }
 #particula-hero { --navy: #17365d; --blue: #3e68a0; --yellow: #ffde59; --p: 0; font-family: 'Raleway', sans-serif; letter-spacing: -.047em; color: var(--navy); position: relative; isolation: isolate; height: 100svh; overflow-y: auto; overflow-x: hidden; }
 #particula-hero .journey { position: relative; height: 160%; }
 #particula-hero .scene { position: sticky; top: 0; height: 100svh; overflow: hidden; background: transparent; }
-#particula-hero .backdrop { position: sticky; top: 0; height: 100svh; margin-bottom: -100svh; overflow: hidden; z-index: -1; background: #eff2f6; pointer-events: none; }
-#particula-hero .backdrop img { position: absolute; width: 120%; height: 120%; left: -10%; top: -10%; object-fit: contain; object-position: 68% center; opacity: .42; transform-origin: 68% 50%; transform: translate3d(var(--bg-x, 0%), var(--bg-y, 0%), 0) rotate(var(--bg-turn, -1.2deg)) scale(var(--bg-zoom, 1.03)); will-change: transform; }
-#particula-hero .tint { position: absolute; inset: 0; background: linear-gradient(100deg, #102743, #17365d); opacity: calc(var(--p) * .86); }
+#particula-hero .backdrop { position: sticky; top: 0; height: 100svh; margin-bottom: -100svh; overflow: hidden; z-index: -1; background: var(--wave-background, #9fbad4); pointer-events: none; }
+
+
 #particula-hero .topline { position: absolute; top: 32px; left: 4.5%; right: 4.5%; display: flex; justify-content: space-between; gap: 24px; font-size: 14px; font-weight: 600; opacity: calc(1 - var(--p) * 2); }
 #particula-hero .title-wrap { position: absolute; inset: 0; display: grid; place-items: center; transform: translate3d(0, calc(var(--p) * -105svh), 0); }
 #particula-hero h1 { font: 700 clamp(80px, 19vw, 280px)/1 'Raleway', sans-serif; letter-spacing: -.047em; margin: 0; padding-right: .047em; text-shadow: none; }
@@ -20,7 +20,7 @@ html, body { margin: 0; background: #17365d; }
 #particula-hero .scroll-cue { position: absolute; bottom: 42px; left: 50%; transform: translateX(-50%); color: var(--navy); text-decoration: none; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 18px; opacity: calc(1 - var(--p) * 3); }
 #particula-hero .scroll-cue span { font-size: 24px; }
 @media (max-width: 600px) { #particula-hero .topline { top: 24px; font-size: 12px; }  #particula-hero h1 { font-size: 22.5vw; }  }
-@media (prefers-reduced-motion: reduce) { #particula-hero .backdrop img { transform: none; } #particula-hero .title-wrap { transform: none; opacity: calc(1 - var(--p) * 2); }  }
+@media (prefers-reduced-motion: reduce) {  #particula-hero .title-wrap { transform: none; opacity: calc(1 - var(--p) * 2); }  }
 
 #particula-hero { font-synthesis: none; }
 #particula-hero .problem { position: relative; padding: 150px 7%; color: #fff; text-align: center; background: linear-gradient(180deg, #17365d14, #17365d08); }
@@ -352,7 +352,7 @@ html, body { margin: 0; background: #17365d; }
 }
 
 /* Readable opening over a bright, detailed illustration. */
-#particula-hero .scene::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #ffffffc9, #ffffff99 50%, #ffffff8c); opacity: calc(1 - var(--p)); pointer-events: none; }
+
 #particula-hero h1 { -webkit-text-stroke: 0 currentColor; text-shadow: none; }
 #particula-hero .product-edge, #particula-hero .pilot-card { background: linear-gradient(135deg, #1c3d62dd, #122c4ded); }
 #particula-hero .tradeoff article { background: linear-gradient(130deg, #274c77e6, #17365deb); }
@@ -375,13 +375,13 @@ html, body { margin: 0; background: #17365d; }
 #particula-hero .figure-dialog-art svg { display: block; width: 100%; min-width: 900px; height: auto; }
 #particula-hero .figure-dialog-hint { margin: 16px 0 0; color: #adc9ec; font-size: 12px; letter-spacing: -.01em; }
 @media (max-width: 700px) {
- #particula-hero .backdrop img { object-position: 67% center; transform-origin: 67% 50%; }
- #particula-hero .scene::before { background: linear-gradient(90deg, #ffffffc9, #ffffffb3 50%, #ffffff99); }
+
+
  #particula-hero .figure-expand { margin-left: 22px; }
  #particula-hero .figure-dialog { padding: 18px; }
 }
 @media (prefers-reduced-motion: reduce) {
- #particula-hero .backdrop img { transform: none; will-change: auto; }
+
 }
 
 /* Two discrete, sourced scenarios; values never imply an interpolated estimate. */
@@ -611,3 +611,6 @@ html, body { margin: 0; background: #17365d; }
  #particula-hero .partner-logos li { height: 62px; }
  #particula-hero .partner-logos img { max-height: 60px; }
 }
+
+/* React background mount; foreground styles remain those of version 14. */
+#pattern-waves-root { position: absolute; inset: 0; }

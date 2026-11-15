@@ -42,20 +42,22 @@
     const heroProgress = clamp(root.scrollTop / heroRange, 0, 1);
     const pageRange = Math.max(1, root.scrollHeight - root.clientHeight);
     const pageProgress = clamp(root.scrollTop / pageRange, 0, 1);
-    const depth = pageProgress * pageProgress * (3 - 2 * pageProgress);
     root.style.setProperty('--p', heroProgress.toFixed(5));
     root.style.setProperty('--page-p', pageProgress.toFixed(5));
-    // Orbital depth: approach the illustration and gently change perspective.
-    // The whole effect follows scroll position and reverses without inertia.
-    root.style.setProperty('--bg-zoom', (1.03 + depth * .18).toFixed(5));
-    root.style.setProperty('--bg-turn', `${(-1.2 + depth * 3.2).toFixed(3)}deg`);
-    root.style.setProperty('--bg-x', `${(Math.sin(pageProgress * Math.PI) * -2.5).toFixed(3)}%`);
-    root.style.setProperty('--bg-y', `${(depth * -3).toFixed(3)}%`);
+    // Finish the background transition as The product reaches the top.
+    // Later sections keep the final pair of colors.
+    const productTop = product.getBoundingClientRect().top - root.getBoundingClientRect().top;
+    const productStart = productTop + root.scrollTop;
+    const transitionStart = Math.max(0, productStart - root.clientHeight);
+    const backgroundProgress = clamp((root.scrollTop - transitionStart) / Math.max(1, productStart - transitionStart), 0, 1);
+    const background = '#' + [0x9f, 0xba, 0xd4].map((channel, i) =>
+      Math.round(channel + ([0x26, 0x3e, 0x55][i] - channel) * backgroundProgress).toString(16).padStart(2, '0')
+    ).join('');
+    root.style.setProperty('--wave-background', background);
     cue.style.visibility = heroProgress > .34 ? 'hidden' : 'visible';
     wheel.classList.toggle('is-dark', heroProgress > .38);
     // The opening brand scene has no wheel entry; reveal it at The product.
     // Progress follows scroll position directly, including when scrolling back.
-    const productTop = product.getBoundingClientRect().top - root.getBoundingClientRect().top;
     const wheelProgress = desktop.matches ? clamp((root.clientHeight * .65 - productTop) / (root.clientHeight * .35), 0, 1) : 0;
     wheel.style.setProperty('--wheel-p', wheelProgress.toFixed(5));
     wheel.classList.toggle('is-visible', wheelProgress > 0);
@@ -74,7 +76,7 @@
   root.addEventListener('scroll', schedule, { passive: true });
   const resizeObserver = new ResizeObserver(schedule);
   resizeObserver.observe(root);
-  // Content changes also alter the remaining parallax distance.
+  // Content changes also alter the remaining scroll distance.
   [...root.children].forEach(child => { if (child !== wheel) resizeObserver.observe(child); });
   desktop.addEventListener('change', () => { selected = -1; schedule(); });
   root.querySelectorAll('a[href^="#"]').forEach(link => {
