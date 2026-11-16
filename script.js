@@ -124,12 +124,12 @@
   const comparisonButtons = [...problemSection.querySelectorAll('[data-comparison]')];
   const comparisonScenarios = {
     current: {
-      cost: '45', time: '3', unit: ' weeks', costRatio: 1, timeRatio: 1,
+      cost: '55', time: '3', unit: ' weeks', costRatio: 1, timeRatio: 1,
       result: ''
     },
     nanoglyph: {
-      cost: '38', time: '1', unit: ' week', costRatio: 38 / 45, timeRatio: 1 / 3,
-      result: '≈$7k lower spend. ≈2 weeks less waiting.'
+      cost: '42', time: '1', unit: ' week', costRatio: 42 / 55, timeRatio: 1 / 3,
+      result: '≈$13k lower spend. ≈2 weeks less waiting.'
     }
   };
   const showComparison = name => {
